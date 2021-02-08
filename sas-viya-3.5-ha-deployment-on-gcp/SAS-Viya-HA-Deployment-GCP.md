@@ -695,5 +695,5 @@ You created a Google Cloud Filestore share previously, in
 
 ## Contributing
 
-We welcome your contributions! Please read [../CONTRIBUTING.md](CONTRIBUTING.md)
+We welcome your contributions! Please read [CONTRIBUTING.md](../CONTRIBUTING.md)
 for details on how to submit contributions to this project.
