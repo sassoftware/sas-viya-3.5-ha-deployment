@@ -952,5 +952,5 @@ for Linux in order to complete the following steps:
 
 ## Contributing
 
-We welcome your contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md)
+We welcome your contributions! Please read [CONTRIBUTING.md](../CONTRIBUTING.md)
 for details on how to submit contributions to this project.
