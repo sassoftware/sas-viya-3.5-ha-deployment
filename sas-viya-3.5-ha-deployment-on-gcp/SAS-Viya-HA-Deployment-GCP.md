@@ -70,7 +70,41 @@ Planning, and SAS Markdown Optimization. For more information, see
 
 ## Overview of Steps
 
-[[_TOC_]]
+[Example Environment](#example-environment)
+
+[Architecture Diagram](#architecture-diagram)
+
+[Setting Up HA SAS Viya on Google Cloud Platform](#setting-up-ha-sas-viya-on-google-cloud-platform)
+
+[Create a VPC Network with a Subnet for the Deployment](#create-a-vpc-network-with-a-subnet-for-the-deployment)
+
+- [Add Firewall Rules For Incoming Data](#add-firewall-rules-for-incoming-data)
+
+[Create Virtual Machine Instances](#create-virtual-machine-instances)
+
+- [Create a VM Instance for the Jump Server](#create-a-vm-instance-for-the-jump-server)
+- [Create Additional VM Instances](#create-additional-vm-instances)
+
+[Create an Unmanaged Instance Group (UIG)](#create-an-unmanaged-instance-group-uig)
+
+[Create a TCP Load Balancer for HA PGPool](#create-a-tcp-load-balancer-for-ha-pgpool)
+
+- [Backend Configuration](#backend-configuration)
+- [Frontend Configuration](#frontend-configuration)
+
+[Create the Google Cloud Filestore Share](#create-the-google-cloud-filestore-share)
+
+[Create an HTTPS Load Balancer for the Apache HTTP Server](#create-an-https-load-balancer-for-the-apache-http-server)
+
+[(Optional) Additional Setup for SAS Common Planning Service PostgreSQL](#additional-setup-for-sas-common-planning-service)
+
+[Prepare to Run the Ansible Playbook](#prepare-to-run-the-ansible-playbook) 
+
+[Verify Readiness of Target Machines](#verify-readiness-of-target-machines)
+
+[Mount the Google Cloud Filestore Share on the Clients](#mount-the-google-cloud-filestore-share-on-the-clients) 
+
+[Contributing](#contributing)
 
 ## Architecture Diagram
 
