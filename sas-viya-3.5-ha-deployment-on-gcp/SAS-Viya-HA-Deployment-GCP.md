@@ -96,7 +96,7 @@ Planning, and SAS Markdown Optimization. For more information, see
 
 [Create an HTTPS Load Balancer for the Apache HTTP Server](#create-an-https-load-balancer-for-the-apache-http-server)
 
-[(Optional) Additional Setup for SAS Common Planning Service PostgreSQL](#additional-setup-for-sas-common-planning-service)
+[(Optional) Additional Setup for SAS Common Planning Service PostgreSQL](#optional-additional-setup-for-sas-common-planning-service-postgreSQL)
 
 [Prepare to Run the Ansible Playbook](#prepare-to-run-the-ansible-playbook) 
 
