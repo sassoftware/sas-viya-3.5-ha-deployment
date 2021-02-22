@@ -63,10 +63,6 @@ products include SAS Assortment Planning, SAS Demand Planning, SAS Financial
 Planning, and SAS Markdown Optimization. For more information, see
 [Additional Setup for CPSPGPool](#additional-setup-for-cpspgpool).
 
-## Overview of Steps
-
-[[_TOC_]]
-
 ## Setting Up HA SAS Viya on AWS
 
 Public Cloud on AWS has unique characteristics that we do not attempt to predict
