@@ -25,7 +25,48 @@ Cloud, such as Microsoft Azure, include the following:
 
 ## Overview of Steps
 
-[[_TOC_]]
+[Overview of Steps](#overview-of-steps)
+[Example Environment](#example-environment)
+[Architecture Diagram](#architecture-diagram)
+
+[Setting Up HA SAS Viya on Microsoft Azure](#setting-up-ha-sas-viya-on-microsoft-azure)
+
+[Create a Resource Group](#create-a-resource-group)
+
+[Create a Public IP Address for the Load Balancer](#create-a-public-ip-address-for-the-load-balancer)
+
+[Create a Virtual Network and Subnet](#create-a-virtual-network-and-subnet)
+
+[Create a Network Security Group](#create-a-network-security-group)
+- [Configure the Network Security Group](#configure-the-network-security-group)
+
+[Create a TCP Load Balancer](#create-a-tcp-load-balancer)
+- [Configure the Load Balancer](#configure-the-load-balancer)
+
+[Create Virtual Machine Instances](#create-virtual-machine-instances)
+- [Configure VM Network Settings for PGPool VM Hosts](#configure-vm-network-settings-for-pgpool-vm-hosts)
+- [Configure VM Network Settings for Other Hosts (No PGPool)](#configure-vm-network-settings-for-other-hosts-no-pgpool)
+- [Add Load-Balancing Rules to the Load Balancer](#add-load-balancing-rules-to-the-load-balancer)
+- [Complete VM Setup](#complete-vm-setup)
+
+[Update Network Security Settings](#update-network-security-settings)
+
+[Create a Jump Server](#create-a-jump-server)
+
+[Provision an Application Gateway](#provision-an-application-gateway)
+- [Create a Self-Signed Certificate for the Application Gateway](#create-a-self-signed-certificate-for-the-application-gateway)
+- [Create the Application Gateway](#create-the-application-gateway)
+- [Add a DNS Name](#add-a-dns-name)
+- [Add the Certificate to the Application Gateway](#add-the-certificate-to-the-application-gateway)
+
+[Set Up a Shared File System for HA SAS Viya](#set-up-a-shared-file-system-for-ha-sas-viya)
+- [Mount the Azure File Shares on All VM Instances](#mount-the-azure-file-shares-on-all-vm-instances)
+
+[(Optional) Additional Setup for SAS Common Planning Service PostgreSQL](#optional-additional-setup-for-sas-common-planning-service-postgreSQL)
+
+[Prepare to Run the Ansible Playbook](#prepare-to-run-the-ansible-playbook) 
+
+[Contributing](#contributing)
 
 ## Example Environment
 
