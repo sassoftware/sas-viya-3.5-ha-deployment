@@ -45,6 +45,12 @@ components, chiefly the CAS server and SAS Infrastructure Data Server. The
 distributed CAS server consists of one or more controller nodes (primary and
 secondary) and two or more worker nodes.
 
+> **_WARNING_**: SAS Viya requires a low-latency environment and is not designed
+> to perform well when components are installed across multiple data centers. In
+> GCP, data centers typically run within separate regions. SAS Viya is not
+> likely to perform as expected if it is deployed on VM instances that are not
+> in the same region.
+> 
 HA SAS Infrastructure Data Server is a clustered PostgreSQL database containing
 at least one PGPool instance and at least one data node. A SAS Infrastructure
 Data Server cluster consists of three or more PGPool nodes (the pgpoolc host
@@ -252,6 +258,12 @@ instance that runs in the same VPC network as the HA cluster is optional.
 1. Click the **Public images** tab.
 1. Select **Red Hat Enterprise Linux** for the **Operating System**, and select
    **Red Hat Enterprise Linux 7** for the **Version**.
+   
+   **_NOTE_**: Red Hat Enterprise 8 is now supported; however, not all SAS Viya
+   products have been tested on that platform. Check the list in the 
+   [Deployment Guide](https://go.documentation.sas.com/?cdcId=calcdc&cdcVersion=3.5&docsetId=dplyml0phy0lax&docsetTarget=n0zjykknqs5ln6n1292uvye8ucrb.htm&locale=en#p0b9qehx8dszzen1ohs2eqefvqc4)
+   before selecting Red Hat Enterprise Linux 8.
+   
 1. For **Boot Disk Type**, you can leave the default (Standard persistent disk
    20 GB).
 1. Click **Select** to confirm your options. You return to the Create an
