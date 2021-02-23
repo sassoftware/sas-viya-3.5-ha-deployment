@@ -387,10 +387,13 @@ server, which we describe later.
      > in the same backend pool for the load balancer.
    - **Image**: Click **Browse all public and private images** to select your
      operating system. SAS recommends using Red Hat Enterprise Linux 7.3 or
-     later. Red Hat Enterprise Linux 8.0 is not yet supported.
-     > _**NOTE**_: SAS Viya supports additional operating systems; however, we
-     > have not tested the instructions for setting up a high-availability
-     > deployment on Microsoft Azure with other operating systems.
+     later.
+     
+     **_NOTE_**: Red Hat Enterprise 8._x_ is now supported; however, not all SAS
+     Viya products have been tested on that platform. Check the list in the
+     [Deployment Guide](https://go.documentation.sas.com/?cdcId=calcdc&cdcVersion=3.5&docsetId=dplyml0phy0lax&docsetTarget=n0zjykknqs5ln6n1292uvye8ucrb.htm&locale=en#p0b9qehx8dszzen1ohs2eqefvqc4)
+     before selecting Red Hat Enterprise Linux 8.
+     
    - **Azure spot instance**: (SAS has not tested with this option enabled.)
    - **Size**: Select the VM Size that you want. The Azure region that you
      selected and your budget determine the options that are available. SAS
