@@ -63,6 +63,10 @@ products include SAS Assortment Planning, SAS Demand Planning, SAS Financial
 Planning, and SAS Markdown Optimization. For more information, see
 [Additional Setup for CPSPGPool](#additional-setup-for-cpspgpool).
 
+## Overview of Steps
+
+[[_TOC_]]
+
 ## Setting Up HA SAS Viya on AWS
 
 Public Cloud on AWS has unique characteristics that we do not attempt to predict
@@ -73,12 +77,26 @@ Use the AWS Management Console or your preferred command-line tool to perform
 steps similar to the ones that we have documented in this example. In this
 document, we describe the steps you can take in the AWS Management Console.
 
-> _**IMPORTANT:**_ In this example, we assume that your AWS deployment already
-> has at least one region and within that region, _at least two_ availability
-> zones.
-
 _**NOTE:**_ The steps and screen captures in this document were current as of
 December 2020.
+
+### Important Environment Considerations
+
+In this example, we assume that your AWS deployment already has at least one
+region. Within that region, you will need _at least two_ availability zones in
+order to meet the AWS requirements to
+[create an application load balancer](#create-an-application-load-balancer-for-the-apache-http-server).
+
+However, the minimum of two availability zones creates a potential conflict. SAS
+Viya requires a low-latency environment and is not designed to perform well when
+components are installed across multiple data centers. In a public cloud, data
+centers typically run within separate regions or availability zones. SAS Viya is
+not likely to perform as expected if it is deployed on VM instances that are not
+in the same region or availability zone.
+
+In order to meet the minimum requirement for two availability zones, consider
+placing the jump server in one availability zone and the remaining SAS Viya
+components in a second zone.
 
 ## Create a Dedicated Virtual Private Cloud (VPC)
 
@@ -139,9 +157,12 @@ create firewall rules that apply only to PGPool.
    pane, click **Instances**.
 1. Click **Launch Instances**. A wizard page opens at Step 1: Choose an Amazon
    Machine Image (AMI).
-1. Select an image type that includes Red Hat Enterprise Linux 7. (Red Hat
-   Enterprise Linux 8 is not supported.) Search for it in the Amazon Marketplace
-   if necessary.
+1. Select an image type that includes Red Hat Enterprise Linux 7 or later.
+
+   **_NOTE_**: Red Hat Enterprise 8._x_ is now supported; however, not all SAS
+   Viya products have been tested on that platform. Check the list in the
+   [Deployment Guide](https://go.documentation.sas.com/?cdcId=calcdc&cdcVersion=3.5&docsetId=dplyml0phy0lax&docsetTarget=n0zjykknqs5ln6n1292uvye8ucrb.htm&locale=en#p0b9qehx8dszzen1ohs2eqefvqc4)
+   before selecting Red Hat Enterprise Linux 8.
 
 1. Verify your selection, and click **Continue**.
 1. On the Step 2: Choose an Instance Type page, select an **Instance type**. SAS
@@ -179,7 +200,7 @@ create firewall rules that apply only to PGPool.
 
    - **Auto-assign Public IP**: Leave this option disabled (the default).
 
-   Multiple instance settings are optional. Here are recommended selections:
+   Multiple settings are optional. Here are recommended selections:
 
    - **Placement Group**: Leave the check box unchecked (the default).
    - **Capacity Reservation**: Select **None**.
@@ -647,8 +668,13 @@ steps on the jump server so that you can easily distribute certificates.
 1. For **Availability Zones**, click to select one of the availability zones
    that you associated with the target VM instances.
 1. Click to select a **Subnet** for the selected availability zone.
-1. Repeat the steps to select all of the availability zones and subnets that you
-   created for your cluster.
+1. Repeat the steps to select at least one additional availability zone and
+   subnet.
+
+   Keep in mind that SAS Viya requires a low-latency environment, but AWS
+   requires multiple availability zones in order to create the applicaiton load
+   balancer.
+
 1. Enable Add-on Services, such as a Global Accelerator, and tags, if desired.
    In our testing, we did not configure add-on services or tags.
 1. Click **Next: Configure Security Settings**.
@@ -823,5 +849,5 @@ for Linux in order to complete the following steps:
 
 ## Contributing
 
-We welcome your contributions! Please read [CONTRIBUTING.md](../CONTRIBUTING.md)
+We welcome your contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md)
 for details on how to submit contributions to this project.
