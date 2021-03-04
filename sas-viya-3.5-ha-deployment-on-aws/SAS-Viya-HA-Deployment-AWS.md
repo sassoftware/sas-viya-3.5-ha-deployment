@@ -97,7 +97,7 @@ Planning, and SAS Markdown Optimization. For more information, see
 
 [Configure the DNS Name of the Elastic IP Address](#configure-the-dns-name-of-the-elastic-ip-address)
 
-[(Optional) Additional Setup for SAS Common Planning Service PostgreSQL](#optional-additional-setup-for-sas-common-planning-service-postgresql)
+[(Optional) Additional Setup for SAS Common Planning Service PostgreSQL](#optional-additional-setup-for-cpspgpool)
 
 [Prepare to Run the Ansible Playbook](#prepare-to-run-the-ansible-playbook) 
 
