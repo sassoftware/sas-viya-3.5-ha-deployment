@@ -833,7 +833,7 @@ will be executed in order to define SAS_SAN_DNS so that when Crypto Management
 code generates a certificate, it includes the DNS name of the load balancer
 elastic IP address and the current host name.
 
-## Additional Setup for CPSPGPool
+## (Optional) Additional Setup for CPSPGPool
 
 If your SAS Viya software order included products that use SAS Common Planning
 Service, additional resources might be required. For orders that include SAS
