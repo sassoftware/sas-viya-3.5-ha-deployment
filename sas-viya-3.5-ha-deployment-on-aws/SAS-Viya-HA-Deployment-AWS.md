@@ -65,7 +65,43 @@ Planning, and SAS Markdown Optimization. For more information, see
 
 ## Overview of Steps
 
-[[_TOC_]]
+[Example Environment](#example-environment)
+
+[Setting Up HA SAS Viya on AWS](#setting-up-ha-sas-viya-on-aws)
+
+- [Important Environment Considerations](#important-environment-considerations)
+
+[Create a Dedicated Virtual Private Cloud (VPC)](#create-a-dedicated-virtual-private-cloud-vpc)
+
+- [Create Dedicated Subnets](#create-dedicated-subnets)
+
+[Create VM Instances](#create-vm-instances)
+
+- [Add a File System to the VM Instances](#add-a-file-system-to-the-vm-instances)
+- [Add Storage to the VM Instances](#add-storage-to-the-vm-instances)
+- [Modify the Security Group and Launch VM Instances](#modify-the-security-group-and-launch-vm-instances)
+
+[Create Elastic IP Addresses](#create-elastic-ip-addresses)
+
+[Create Security Groups](#create-security-groups)
+
+[Create Target Groups](#create-target-groups)
+
+[Create a Network Load Balancer](#create-a-network-load-balancer)
+
+- [Add Target Groups to the Load Balancer](#add-target-groups-to-the-load-balancer)
+
+[Create an Application Load Balancer for the Apache HTTP Server](#create-an-application-load-balancer-for-the-apache-http-server)
+
+- [Configure and Secure the Application Load Balancer](#configure-and-secure-the-application-load-balancer)
+
+[Configure the DNS Name of the Elastic IP Address](#configure-the-dns-name-of-the-elastic-ip-address)
+
+[(Optional) Additional Setup for SAS Common Planning Service PostgreSQL](#optional-additional-setup-for-sas-common-planning-service-postgresql)
+
+[Prepare to Run the Ansible Playbook](#prepare-to-run-the-ansible-playbook) 
+
+[Contributing](#contributing)
 
 ## Setting Up HA SAS Viya on AWS
 
